@@ -41,3 +41,11 @@ utilisateurs du vault, avec un investissement initial minime.
 ## Validation
 A completer en etape 5/retest : re-executer `test_ExploitDrainsVault()`
 sur le contrat corrige et verifier qu'il echoue (attaque bloquee).
+
+## Validation (etape 5/retest) - COMPLETE
+- test_ExploitFailsOnSecureVault() : PASS -> l'exploit echoue (revert)
+  grace a ReentrancyGuard + ordre Checks-Effects-Interactions
+- test_HonestWithdrawStillWorks() : PASS -> un retrait honnete
+  fonctionne toujours normalement
+- Conclusion : la faille reentrancy est corrigee. Vault passe de
+  vulnerable (vide en 1 transaction) a securise (attaque bloquee).
