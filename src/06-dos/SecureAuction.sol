@@ -34,12 +34,11 @@ contract SecureAuction {
         uint256 amount = pendingReturns[msg.sender];
         require(amount > 0, "Rien a retirer");
 
-        // Checks-Effects-Interactions : on remet à zéro AVANT d'envoyer l'argent.
+        // Checks-Effects-Interactions : état et événement AVANT l'appel externe.
         pendingReturns[msg.sender] = 0;
+        emit Withdrawn(msg.sender, amount);
 
         (bool ok, ) = msg.sender.call{value: amount}("");
         require(ok, "Retrait echoue");
-
-        emit Withdrawn(msg.sender, amount);
     }
 }
