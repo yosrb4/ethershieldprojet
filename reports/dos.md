@@ -62,3 +62,8 @@ Rapport Slither de la version corrigée : `reports/slither_dos_fixed.txt`.
 - Un offrant dont le contrat refuse l'ETH ne récupère jamais son remboursement
   (il n'a que lui-même à blâmer, mais ses fonds restent bloqués dans le contrat).
 - Pas de date de fin d'enchère ni de vendeur dans ce contrat de laboratoire.
+
+### Résultats Slither sur la version corrigée (reports/slither_dos_fixed.txt)
+| Détecteur | Classification | Remarque |
+|---|---|---|
+| low-level-calls (withdraw) | Faux positif | `call` nécessaire pour envoyer l'ETH ; il ne transfère que le solde de l'appelant, après remise à zéro (CEI), et son échec n'affecte plus les autres utilisateurs |
