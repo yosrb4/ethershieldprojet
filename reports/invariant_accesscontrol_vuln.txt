@@ -1,0 +1,54 @@
+No files changed, compilation skipped
+{"timestamp":1795383201,"event":"failure","invariant":"invariant_balanceUntouched","target":"test/exploits/AccessControlInvariantVuln.t.sol:AccessControlInvariantVulnTest","reason":"assertion failed: 0 != 5000000000000000000"}
+{"timestamp":1795383201,"event":"failure","invariant":"invariant_ownerNeverChanges","target":"test/exploits/AccessControlInvariantVuln.t.sol:AccessControlInvariantVulnTest","reason":"assertion failed: 0x62170e6794A9Ed45E63aDfF7f974E6138355F246 != 0xaE0bDc4eEAC5E950B67C6819B118761CaAF61946"}
+
+Ran 1 test for test/exploits/AccessControlInvariantVuln.t.sol:AccessControlInvariantVulnTest
+[FAIL: assertion failed: 0 != 5000000000000000000] invariant_balanceUntouched
+	[Sequence] (original: 3, shrunk: 2)
+		sender=0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38 addr=[test/exploits/AccessControlInvariantVuln.t.sol:VulnHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=attackerSetOwner(uint256) args=[63104 [6.31e4]]
+		sender=0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38 addr=[test/exploits/AccessControlInvariantVuln.t.sol:VulnHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=attackerWithdraw(uint256) args=[63104 [6.31e4]]
+
+[FAIL: assertion failed: 0x92Bd24A3F43Fe3e694Bc3ca67FA1Ce89883D317F != 0xaE0bDc4eEAC5E950B67C6819B118761CaAF61946] invariant_ownerNeverChanges
+	[Sequence] (original: 1, shrunk: 1)
+		sender=0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38 addr=[test/exploits/AccessControlInvariantVuln.t.sol:VulnHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=attackerSetOwner(uint256) args=[0]
+
+AccessControlInvariantVulnTest invariants: 2/2 invariants broken
+[FAIL: assertion failed: 0 != 5000000000000000000] invariant_balanceUntouched
+[FAIL: assertion failed: 0x92Bd24A3F43Fe3e694Bc3ca67FA1Ce89883D317F != 0xaE0bDc4eEAC5E950B67C6819B118761CaAF61946] invariant_ownerNeverChanges
+2 invariant failure(s) persisted to cache/invariant/failures/AccessControlInvariantVulnTest — rerun to shrink
+ AccessControlInvariantVulnTest invariants (runs: 256, calls: 258, reverts: 0)
+
+╭-------------+------------------+-------+---------+----------╮
+| Contract    | Selector         | Calls | Reverts | Discards |
++=============================================================+
+| VulnHandler | attackerSetOwner | 122   | 0       | 0        |
+|-------------+------------------+-------+---------+----------|
+| VulnHandler | attackerWithdraw | 136   | 0       | 0        |
+╰-------------+------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 305.97ms (304.08ms CPU time)
+
+Ran 1 test suite in 310.88ms (305.97ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/exploits/AccessControlInvariantVuln.t.sol:AccessControlInvariantVulnTest
+[FAIL: assertion failed: 0 != 5000000000000000000] invariant_balanceUntouched
+	[Sequence] (original: 3, shrunk: 2)
+		sender=0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38 addr=[test/exploits/AccessControlInvariantVuln.t.sol:VulnHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=attackerSetOwner(uint256) args=[63104 [6.31e4]]
+		sender=0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38 addr=[test/exploits/AccessControlInvariantVuln.t.sol:VulnHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=attackerWithdraw(uint256) args=[63104 [6.31e4]]
+
+[FAIL: assertion failed: 0x92Bd24A3F43Fe3e694Bc3ca67FA1Ce89883D317F != 0xaE0bDc4eEAC5E950B67C6819B118761CaAF61946] invariant_ownerNeverChanges
+	[Sequence] (original: 1, shrunk: 1)
+		sender=0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38 addr=[test/exploits/AccessControlInvariantVuln.t.sol:VulnHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=attackerSetOwner(uint256) args=[0]
+
+AccessControlInvariantVulnTest invariants: 2/2 invariants broken
+[FAIL: assertion failed: 0 != 5000000000000000000] invariant_balanceUntouched
+[FAIL: assertion failed: 0x92Bd24A3F43Fe3e694Bc3ca67FA1Ce89883D317F != 0xaE0bDc4eEAC5E950B67C6819B118761CaAF61946] invariant_ownerNeverChanges
+2 invariant failure(s) persisted to cache/invariant/failures/AccessControlInvariantVulnTest — rerun to shrink
+ AccessControlInvariantVulnTest invariants (runs: 256, calls: 258, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xb732ba39628ebb90a1b00404794894a8089250ccb7b643a24dcb450ee26abde (use `--fuzz-seed` to reproduce)

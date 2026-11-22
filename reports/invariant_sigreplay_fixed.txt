@@ -1,0 +1,20 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/fixed/SigReplayInvariant.t.sol:SigReplayInvariantTest
+[PASS]
+SigReplayInvariantTest invariants:
+[PASS] invariant_atMostOneEtherLeaves
+[PASS] invariant_nonceNeverAboveOne
+ SigReplayInvariantTest invariants (runs: 256, calls: 128000, reverts: 0)
+
+╭------------+--------------+-------+---------+----------╮
+| Contract   | Selector     | Calls | Reverts | Discards |
++========================================================+
+| SigHandler | replay       | 64309 | 0       | 0        |
+|------------+--------------+-------+---------+----------|
+| SigHandler | tamperAmount | 63691 | 0       | 0        |
+╰------------+--------------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 14.45s (14.45s CPU time)
+
+Ran 1 test suite in 14.46s (14.45s CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)
