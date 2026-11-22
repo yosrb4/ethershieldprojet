@@ -1,0 +1,10 @@
+Multiple frameworks detected: Foundry, solc, Solc-json. Using Foundry (highest priority). Use --compile-force-framework to override.
+'forge clean' running (wd: /home/kali/ethershieldprojet)
+'forge config --json' running
+'forge build --build-info --deny never src/fixed/SafeAccessControlVault.sol' running (wd: /home/kali/ethershieldprojet)
+INFO:Detectors:
+Detector: low-level-calls
+Low level call in SafeAccessControlVault.withdrawAll() (src/fixed/SafeAccessControlVault.sol#14-17):
+	- (ok,None) = address(owner()).call{value: address(this).balance}() (src/fixed/SafeAccessControlVault.sol#15)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+INFO:Slither:src/fixed/SafeAccessControlVault.sol analyzed (3 contracts with 102 detectors), 1 result(s) found
