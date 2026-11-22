@@ -1,0 +1,13 @@
+'forge clean' running (wd: /home/amal/ethershieldprojet)
+'forge config --json' running
+'forge build --build-info --deny never --skip ./test/** ./script/** --force' running (wd: /home/amal/ethershieldprojet)
+INFO:Detectors:
+Detector: low-level-calls
+Low level call in VulnerableAuction.bid() (src/06-dos/VulnerableAuction.sol#14-33):
+	- (ok,None) = previousBidder.call{value: previousBid}() (src/06-dos/VulnerableAuction.sol#30)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+INFO:Detectors:
+Detector: immutable-states
+Attacker.auction (src/06-dos/Attacker.sol#10) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+INFO:Slither:. analyzed (2 contracts with 102 detectors), 2 result(s) found

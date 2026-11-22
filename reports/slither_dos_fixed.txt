@@ -1,0 +1,9 @@
+'forge clean' running (wd: /home/amal/ethershieldprojet)
+'forge config --json' running
+'forge build --build-info --deny never --skip ./test/** ./script/** --force' running (wd: /home/amal/ethershieldprojet)
+INFO:Detectors:
+Detector: low-level-calls
+Low level call in SecureAuction.withdraw() (src/06-dos/SecureAuction.sol#33-43):
+	- (ok,None) = msg.sender.call{value: amount}() (src/06-dos/SecureAuction.sol#41)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+INFO:Slither:. analyzed (4 contracts with 102 detectors), 1 result(s) found
