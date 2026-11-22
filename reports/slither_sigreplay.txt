@@ -1,0 +1,21 @@
+Multiple frameworks detected: Foundry, solc, Solc-json. Using Foundry (highest priority). Use --compile-force-framework to override.
+'forge clean' running (wd: /home/kali/ethershieldprojet)
+'forge config --json' running
+'forge build --build-info --deny never src/vulnerable/SigVault.sol' running (wd: /home/kali/ethershieldprojet)
+INFO:Detectors:
+Detector: missing-zero-check
+SigVault.constructor(address)._signer (src/vulnerable/SigVault.sol#8) lacks a zero-check on :
+		- signer = _signer (src/vulnerable/SigVault.sol#9)
+SigVault.withdraw(address,uint256,uint8,bytes32,bytes32).to (src/vulnerable/SigVault.sol#15) lacks a zero-check on :
+		- (ok,None) = to.call{value: amount}() (src/vulnerable/SigVault.sol#31)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+INFO:Detectors:
+Detector: low-level-calls
+Low level call in SigVault.withdraw(address,uint256,uint8,bytes32,bytes32) (src/vulnerable/SigVault.sol#14-33):
+	- (ok,None) = to.call{value: amount}() (src/vulnerable/SigVault.sol#31)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+INFO:Detectors:
+Detector: immutable-states
+SigVault.signer (src/vulnerable/SigVault.sol#6) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+INFO:Slither:src/vulnerable/SigVault.sol analyzed (1 contracts with 102 detectors), 4 result(s) found
