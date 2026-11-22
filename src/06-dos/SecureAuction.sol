@@ -38,7 +38,7 @@ contract SecureAuction {
         pendingReturns[msg.sender] = 0;
         emit Withdrawn(msg.sender, amount);
 
-        (bool ok, ) = msg.sender.call{value: amount}("");
+        (bool ok,) = msg.sender.call{value: amount}("");
         require(ok, "Retrait echoue");
     }
 }

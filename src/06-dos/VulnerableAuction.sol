@@ -27,7 +27,7 @@ contract VulnerableAuction {
         // et on exige qu'il réussisse. Si l'ancien offrant est un contrat qui refuse
         // l'argent (revert), TOUTE la transaction échoue : plus personne ne peut enchérir.
         if (previousBidder != address(0)) {
-            (bool ok, ) = previousBidder.call{value: previousBid}("");
+            (bool ok,) = previousBidder.call{value: previousBid}("");
             require(ok, "Remboursement echoue");
         }
     }
